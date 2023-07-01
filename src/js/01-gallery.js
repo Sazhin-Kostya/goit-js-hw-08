@@ -11,10 +11,10 @@ console.log(galleryItems);
 const imgContainer = document.querySelector('.gallery')
 
 const imgElement = galleryItems.reduce((acum, item) => {
-    return (acum += `<div class="gallery__item"> <a class="gallery__link" href="${item.original}"><img class="gallery__image"
+    return (acum += `<li class="gallery__item"> <a class="gallery__link" href="${item.original}"><img class="gallery__image"
       src = "${item.preview}"
       data-source="${item.original}"
-      alt="${item.description}"/></a></div>`);
+      alt="${item.description}"/></a></li>`);
 }, '');
 
 imgContainer.insertAdjacentHTML('beforeend', imgElement);

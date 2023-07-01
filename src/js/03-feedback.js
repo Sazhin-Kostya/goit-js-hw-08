@@ -25,11 +25,16 @@ function onFormInput(event) {
 
 function onFormSubmit(event) {
     event.preventDefault();  
+    if (email.value === '' || message.value === '') {
+      return  alert('Все поля должны быть заполнены!')
+        
+    }
     const consoleObj = localStorage.getItem(STORAGE_KEY);
     const parceConsoleMsg = JSON.parse(consoleObj)
     if (parceConsoleMsg) {
         console.log(parceConsoleMsg);
     }  
+    
     localStorage.removeItem(STORAGE_KEY);
     form.reset();
 };
